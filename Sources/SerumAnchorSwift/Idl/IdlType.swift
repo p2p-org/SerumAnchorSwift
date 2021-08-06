@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Int2X
 
 public protocol IdlType: IdlEnumFieldConvertible {}
 
@@ -18,8 +19,7 @@ extension UInt32: IdlType{}
 extension Int32: IdlType{}
 extension UInt64: IdlType{}
 extension Int64: IdlType{}
-//extension u128: IdlType{}
-//extension i128: IdlType{}
+extension UInt2X: IdlEnumFieldConvertible {}
 
 //extension Array: IdlType where Element == UInt8 {}
 extension String: IdlType{}

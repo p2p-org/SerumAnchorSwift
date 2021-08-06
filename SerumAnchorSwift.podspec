@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.swift_versions = '5.0'
 
-  s.source_files = 'SerumAnchorSwift/Classes/**/*'
+  s.source_files = 'Sources/**/*.swift'
   
   # s.resource_bundles = {
   #   'SerumAnchorSwift' => ['SerumAnchorSwift/Assets/*.png']

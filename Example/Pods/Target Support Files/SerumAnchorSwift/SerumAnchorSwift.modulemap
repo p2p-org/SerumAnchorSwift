@@ -1,6 +1,0 @@
-framework module SerumAnchorSwift {
-  umbrella header "SerumAnchorSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

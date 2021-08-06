@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BufferLayoutSwift",
+        "repositoryURL": "https://github.com/bigearsenal/BufferLayoutSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "ae04e450ef53dd113454df3687fd7b819b7cd242",
+          "version": "0.5.0"
+        }
+      },
+      {
+        "package": "Runtime",
+        "repositoryURL": "https://github.com/wickwirew/Runtime.git",
+        "state": {
+          "branch": null,
+          "revision": "a848b81e1a0100801f572e5273ffe4352fd54088",
+          "version": "2.2.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

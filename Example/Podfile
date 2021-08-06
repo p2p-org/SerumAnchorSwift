@@ -1,6 +1,0 @@
-use_frameworks!
-target 'SerumAnchorSwift_Tests' do
-  pod 'SerumAnchorSwift', :path => '../'
-  
-  
-end

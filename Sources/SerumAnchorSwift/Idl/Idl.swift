@@ -18,6 +18,39 @@ public struct Idl {
     let types: [IdlTypeDef]?
     let events: [IdlEvent]?
     let errors: [IdlErrorCode]?
+    
+    ///  Deterministic IDL address as a function of the program id.
+    /// - Parameter programId: programId
+    /// - Returns: a PublicKey
+    public static func idlAddress<T: PublicKey>(programId: T) -> Promise<T> {
+//        const base = (await PublicKey.findProgramAddress([], programId))[0]
+        return firstly {
+            T.findProgramAddress(from: programId)
+        }
+        .then {base in
+            T.createWithSeed(base: base, seed: Self.seed, programId: programId)
+        }
+    }
+    
+    ///  Seed for generating the idlAddress.
+    public static var seed: String {
+        "anchor:idl"
+    }
+    
+    static func decodeIdlAccount<T: IdlProgramAccountType>(data: Data) throws -> T {
+        try T(buffer: data)
+    }
+    
+    static func encodeIdlAccount<T: IdlProgramAccountType>(account: T) throws -> Data {
+        try account.encode()
+    }
+}
+
+///  The on-chain account of the IDL.
+public protocol IdlProgramAccountType: BufferLayout {
+    associatedtype T: PublicKey
+    var authority: T {get}
+    var data: VecU8 {get}
 }
 
 public struct IdlEvent {
@@ -64,41 +97,3 @@ struct IdlTypeDefTy {
 }
 
 typealias IdlTypeDefStruct = [IdlField]
-
-extension Idl {
-    ///  Deterministic IDL address as a function of the program id.
-    /// - Parameter programId: programId
-    /// - Returns: a PublicKey
-    public static func idlAddress<T: PublicKey>(programId: T) -> Promise<T> {
-//        const base = (await PublicKey.findProgramAddress([], programId))[0]
-        return firstly {
-            T.findProgramAddress(from: programId)
-        }
-        .then {base in
-            T.createWithSeed(base: base, seed: Self.seed, programId: programId)
-        }
-    }
-    
-    ///  Seed for generating the idlAddress.
-    public static var seed: String {
-        "anchor:idl"
-    }
-    
-//    static func decodeIdlAccount<T: IdlProgramAccount>(data: Data) -> T {
-//        T(buffer: data)
-//    }
-//
-//    export function encodeIdlAccount(acc: IdlProgramAccount): Buffer {
-//    const buffer = Buffer.alloc(1000) // TODO: use a tighter buffer.
-//    const len = IDL_ACCOUNT_LAYOUT.encode(acc, buffer)
-//    return buffer.slice(0, len)
-//    }
-}
-
-///  The on-chain account of the IDL.
-public protocol IdlProgramAccountType: BufferLayout {
-    associatedtype T: PublicKey
-    var authority: T {get}
-    var data: Int {get}
-}
-

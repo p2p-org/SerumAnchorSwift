@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/bigearsenal/BufferLayoutSwift.git", from: "0.5.0"),
+        .package(url: "https://github.com/bigearsenal/BufferLayoutSwift.git", from: "0.6.1"),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "7.0.0-rc1"),
         
         .package(name: "Int2X", url: "https://github.com/dankogai/swift-int2x.git", from: "0.0.1")

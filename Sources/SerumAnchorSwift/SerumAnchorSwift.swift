@@ -1,3 +1,3 @@
-struct SerumAnchorSwift {
-    var text = "Hello, World!"
+struct SerumAnchor {
+    
 }

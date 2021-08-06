@@ -7,7 +7,6 @@
 
 import Foundation
 import PromiseKit
-import BufferLayoutSwift
 
 public struct Idl {
     let version: String
@@ -22,7 +21,7 @@ public struct Idl {
     ///  Deterministic IDL address as a function of the program id.
     /// - Parameter programId: programId
     /// - Returns: a PublicKey
-    public static func idlAddress<T: PublicKey>(programId: T) -> Promise<T> {
+    public static func idlAddress<T: PublicKeyType>(programId: T) -> Promise<T> {
 //        const base = (await PublicKey.findProgramAddress([], programId))[0]
         return firstly {
             T.findProgramAddress(from: programId)
@@ -44,13 +43,6 @@ public struct Idl {
     static func encodeIdlAccount<T: IdlProgramAccountType>(account: T) throws -> Data {
         try account.encode()
     }
-}
-
-///  The on-chain account of the IDL.
-public protocol IdlProgramAccountType: BufferLayout {
-    associatedtype T: PublicKey
-    var authority: T {get}
-    var data: VecU8 {get}
 }
 
 public struct IdlEvent {

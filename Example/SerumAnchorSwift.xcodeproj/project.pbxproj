@@ -12,14 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EC822E87945AFFD0ADA4700 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1EDEDA2AD5E4409035F5263A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0EC822E87945AFFD0ADA4700 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1EDEDA2AD5E4409035F5263A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5F817DF34A8C973BC2AFB29D /* Pods_SerumAnchorSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SerumAnchorSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* SerumAnchorSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SerumAnchorSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		C8A0E673ABAFBCCC09DC8E36 /* Pods-SerumAnchorSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerumAnchorSwift_Tests.release.xcconfig"; path = "Target Support Files/Pods-SerumAnchorSwift_Tests/Pods-SerumAnchorSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DB0F39EDED4A0215E56B2AEC /* SerumAnchorSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SerumAnchorSwift.podspec; path = ../SerumAnchorSwift.podspec; sourceTree = "<group>"; };
+		DB0F39EDED4A0215E56B2AEC /* SerumAnchorSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SerumAnchorSwift.podspec; path = ../SerumAnchorSwift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EC88E87B13191C50B16BE764 /* Pods-SerumAnchorSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SerumAnchorSwift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SerumAnchorSwift_Tests/Pods-SerumAnchorSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,6 @@
 				EC88E87B13191C50B16BE764 /* Pods-SerumAnchorSwift_Tests.debug.xcconfig */,
 				C8A0E673ABAFBCCC09DC8E36 /* Pods-SerumAnchorSwift_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,10 +130,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
@@ -147,6 +142,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
